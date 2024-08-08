@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Assessment and Analysis Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="start-screen">
+        <h1>Student Assessment and Analysis Tool</h1>
+        <label for="test-duration">Test Duration (minutes):</label>
+        <input type="number" id="test-duration" min="1" value="60">
+        <br>
+        <label for="question-folder">Select Question Folder:</label>
+        <input type="file" id="question-folder" webkitdirectory directory multiple>
+        <br>
+        <button id="start-test">Start Test</button>
+	<h2>Developed by Sachys Systems</h2>
+	
+    </div>
+
+    <div id="test-screen" style="display: none;">
+        <div id="timer"></div>
+        <div id="question-navigation">
+            <button id="prev-question">&lt; Previous</button>
+            <select id="question-selector"></select>
+            <button id="next-question">Next &gt;</button>
+        </div>
+        <div id="question-display">
+            <h2 id="question-number"></h2>
+            <img id="question-image" src="" alt="Question Image">
+        </div>
+        <div id="answer-choices">
+            <button class="answer-btn" data-choice="A">A</button>
+            <button class="answer-btn" data-choice="B">B</button>
+            <button class="answer-btn" data-choice="C">C</button>
+            <button class="answer-btn" data-choice="D">D</button>
+        </div>
+        <button id="clear-selection">Clear Selection</button>
+        <button id="finish-test">Finish Test</button>
+        <div id="progress-bar">
+            <div id="progress"></div>
+        </div>
+    </div>
+
+    <div id="results-screen" style="display: none;">
+        <h2>Test Completed</h2>
+        <p id="score-display"></p>
+        <a id="download-report" href="#" download="test_results.csv">Download Report</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
